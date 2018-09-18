@@ -24,9 +24,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <tomcat.version>9.0.12</tomcat.version>
         <java.version>1.8</java.version>
-        <spring-boot-starter-web>2.0.5.RELEASE</spring-boot-starter-web>
-        <spring-boot-starter-tomcat>2.0.5.RELEASE</spring-boot-starter-tomcat>
-        <spring-boot-starter-data-jpa>2.0.5.RELEASE</spring-boot-starter-data-jpa>
         <hibernate-core>5.3.6.Final</hibernate-core>
         <h2>1.4.196</h2>
         <jackson-databind>2.9.6</jackson-databind>
@@ -38,13 +35,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${spring-boot-starter-web}</version>
         </dependency>
         <!-- the following example marks the servlet container (Tomcat, in this case) as being provided: -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
-            <version>${spring-boot-starter-tomcat}</version>
             <scope>provided</scope>
         </dependency>
         <!-- database -->
@@ -52,7 +47,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>${spring-boot-starter-data-jpa}</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>

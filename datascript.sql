@@ -69,11 +69,6 @@ ALTER TABLE `Room` ADD FOREIGN KEY (category_id) REFERENCES `Category` (`id`);
 ALTER TABLE `journal2features` ADD FOREIGN KEY (bookingJournal_id) REFERENCES `BookingJournal` (`id`);
 ALTER TABLE `journal2features` ADD FOREIGN KEY (features_id) REFERENCES `Features` (`id`);
 
-
-
-
-
-
 SELECT * FROM USER;
 INSERT INTO `User` (`id`,`first_name`,`last_name`,`phone`,`email`) VALUES ('1','Sasha1','Bogush1','1969601256','sashabogush1@ukr.sfg');
 INSERT INTO `User` (`id`,`first_name`,`last_name`,`phone`,`email`) VALUES ('2','Sasha2','Bogush2','2969601256','sashabogush2@ukr.sfg');
@@ -81,41 +76,18 @@ INSERT INTO `User` (`id`,`first_name`,`last_name`,`phone`,`email`) VALUES ('3','
 INSERT INTO `User` (`id`,`first_name`,`last_name`,`phone`,`email`) VALUES ('4','Sasha4','Bogush4','2969601256','sashabogush4@ukr.sfg');
 SELECT * FROM USER;
 
-
-
-
-
-
-
-
-
-
 SELECT * FROM CATEGORY ;
 INSERT INTO `CATEGORY` (`id`,`category_room`) VALUES ('1','KINGROOM');
 INSERT INTO `CATEGORY` (`id`,`category_room`) VALUES ('2','LOSERROOM');
 INSERT INTO `CATEGORY` (`id`,`category_room`) VALUES ('3','LUXROOM');
 SELECT * FROM CATEGORY ;
 
-
-
-
-
-
-
-
-
 SELECT * FROM FEATURES  ;
 INSERT INTO `Features` (`id`,`name`,`price`) VALUES ('1','ZAVTRAK','65.33');
 INSERT INTO `Features` (`id`,`name`,`price`) VALUES ('2','DINER','656.32');
 INSERT INTO `Features` (`id`,`name`,`price`) VALUES ('3','UBORKA','150.96');
 INSERT INTO `Features` (`id`,`name`,`price`) VALUES ('4','BAR','500.03');
-
 SELECT * FROM FEATURES  ;
-
-
-
-
-
 
 SELECT * FROM ROOM;
 INSERT INTO `ROOM` (`id`,`category_id`,`number`,`price`,`available`) VALUES ('1','1','1A','32.56','1');

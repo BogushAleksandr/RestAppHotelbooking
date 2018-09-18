@@ -7,15 +7,7 @@ import java.util.List;
 
 public class PriceCalculator {
 
-
-
-    public PriceCalculator() {
-    }
-
-
-    public double getPrice(Room room, List<Feature> features) {
-
-
+    public static double getPrice(Room room, List<Feature> features) {
 
         double price = room.getPrice();
 
