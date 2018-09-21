@@ -18,10 +18,25 @@ public class JournalService {
     private BookingJournalRepository bookingJournalRepository;
     private final PriceCalculator priceCalculator;
 
-    @Autowired
+   /* @Autowired
     public JournalService(
             BookingJournalRepository bookingJournalRepository,
             PriceCalculator priceCalculator) {
+        this.bookingJournalRepository = bookingJournalRepository;
+        this.priceCalculator = priceCalculator;
+    }*/
+
+    /*//TODO make this return boolean
+    public void bookRoom(User user, Room room, LocalDate dateFrom, LocalDate dateTo, List<Feature> features) {
+
+        double price = priceCalculator.getPrice(room, features);
+
+        BookingJournal journalEntry = new BookingJournal(user, room, dateFrom, dateTo, price);
+        bookingJournalRepository.save(journalEntry);
+    }*/
+
+    @Autowired
+    public JournalService(BookingJournalRepository bookingJournalRepository, PriceCalculator priceCalculator) {
         this.bookingJournalRepository = bookingJournalRepository;
         this.priceCalculator = priceCalculator;
     }
@@ -29,10 +44,12 @@ public class JournalService {
     //TODO make this return boolean
     public void bookRoom(User user, Room room, LocalDate dateFrom, LocalDate dateTo, List<Feature> features) {
 
+
         double price = priceCalculator.getPrice(room, features);
 
         BookingJournal journalEntry = new BookingJournal(user, room, dateFrom, dateTo, price);
         bookingJournalRepository.save(journalEntry);
     }
+
 
 }

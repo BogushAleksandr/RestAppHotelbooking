@@ -6,7 +6,6 @@ import hotel.entities.Room;
 import java.util.List;
 
 public class PriceCalculator {
-
     public static double getPrice(Room room, List<Feature> features) {
 
         double price = room.getPrice();
