@@ -1,25 +1,21 @@
 package hotel.controller;
 
 
-import hotel.entities.Category;
-import hotel.repositories.CategoryRepository;
+import hotel.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CategoryController {
+   private final CategoryService categoryService;
     @Autowired
-    CategoryRepository categoryRepository;
-
-    @RequestMapping("/findallCategory")
-    public String findAllCategory() {
-        String resultCategory = " ";
-        for (Category category : categoryRepository.findAll()) {
-            resultCategory += category.toString() + "</br>";
-        }
-        return resultCategory;
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 
-
+    @RequestMapping("/findallCategory")
+    private String findCategory() {
+        return categoryService.findAllCategory();
+    }
 }

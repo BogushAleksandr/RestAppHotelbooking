@@ -41,4 +41,52 @@ public class BookingJournal implements Serializable {
         this.date_to = date_to;
         this.total_price = total_price;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public User getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(User user_id) {
+        this.user_id = user_id;
+    }
+
+    public Room getRoom_id() {
+        return room_id;
+    }
+
+    public void setRoom_id(Room room_id) {
+        this.room_id = room_id;
+    }
+
+    public LocalDate getDate_from() {
+        return date_from;
+    }
+
+    public void setDate_from(LocalDate date_from) {
+        this.date_from = date_from;
+    }
+
+    public LocalDate getDate_to() {
+        return date_to;
+    }
+
+    public void setDate_to(LocalDate date_to) {
+        this.date_to = date_to;
+    }
+
+    public double getTotal_price() {
+        return total_price;
+    }
+
+    public void setTotal_price(double total_price) {
+        this.total_price = total_price;
+    }
 }

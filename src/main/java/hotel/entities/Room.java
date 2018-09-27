@@ -77,6 +77,7 @@ public class Room implements Serializable {
 
     @Override
     public String toString() {
-        return String.format("Room [id = '%d', category = '%s', number = '%s', price = '%8.2f', avaible = '%d']", id, category.toString(), number, price, available);
+        return String.format("Room [id = '%d', category = '%s', number = '%s', price = '%8.2f', avaible = '%d']",
+                id, category.toString(), number, price, available);
     }
 }

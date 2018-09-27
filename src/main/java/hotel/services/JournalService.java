@@ -30,6 +30,4 @@ public class JournalService {
         BookingJournal journalEntry = new BookingJournal(user, room, dateFrom, dateTo, price);
         bookingJournalRepository.save(journalEntry);
     }
-
-
 }

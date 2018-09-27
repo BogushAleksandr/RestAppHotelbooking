@@ -6,12 +6,12 @@
 
     <groupId>com.ua.home</groupId>
     <artifactId>hotelbooking</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>Hotel Booking</name>
     <description>REST application Hotel booking</description>
-
+    <!-- Inherit defaults from Spring Boot -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -31,7 +31,7 @@
         <jackson-databind>2.9.6</jackson-databind>
         <junit-jupiter-api>5.3.1</junit-jupiter-api>
     </properties>
-
+    <!-- Add typical dependencies for a web application -->
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
         <dependency>
@@ -76,7 +76,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
+    <!-- Package as an executable jar -->
     <build>
         <plugins>
             <plugin>
