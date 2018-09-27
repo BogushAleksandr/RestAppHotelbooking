@@ -7,7 +7,6 @@ import hotel.services.JournalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,7 +25,6 @@ public class UserController {
         this.bookingJournalRepository = bookingJournalRepository;
     }
 
-    @ResponseBody
     @RequestMapping("/saveUser")
     public String addUser() {
         userRepository.save(new User("firstnameUser0", "secondnameUser0", "+380969604510", "user1kasd0@ukr.net"));
@@ -41,7 +39,6 @@ public class UserController {
         userRepository.save(new User("firstnameUser9", "secondnameUser9", "+380969604519", "user1kasd9@ukr.net"));
         return "User is added!";
     }
-    @ResponseBody
     @RequestMapping("/findallUser")
     public String findedallUser() {
         StringBuilder resultUsers = new StringBuilder(" ");
@@ -50,7 +47,6 @@ public class UserController {
         }
         return resultUsers.toString();
     }
-    @ResponseBody
     @RequestMapping("/user/can/view/his/booking/{userId}")
     public String userCanViewHisBooking(@PathVariable Long userId){
         User user = userRepository.getUserById(userId);

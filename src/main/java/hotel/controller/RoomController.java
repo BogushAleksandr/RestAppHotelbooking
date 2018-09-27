@@ -13,7 +13,6 @@ import hotel.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
@@ -40,7 +39,6 @@ public class RoomController {
         this.featuresRepository = featuresRepository;
     }
 
-    @ResponseBody
     @RequestMapping("/findAllRooms")
     public String findedAllRoom() {
         StringBuilder resultRoom = new StringBuilder(" ");
@@ -50,7 +48,6 @@ public class RoomController {
         return resultRoom.toString();
     }
 
-    @ResponseBody
     @RequestMapping("find/category/{name}")
     public String findByName(@PathVariable String name) {
         Category category = categoryRepository.getCategoryByCategoryName(name);
@@ -65,7 +62,6 @@ public class RoomController {
         return sb.toString();
     }
 
-    @ResponseBody
     @RequestMapping("room/available")
     public String getAvailableRooms() {
         StringBuilder stringBuilder = new StringBuilder();
@@ -77,7 +73,6 @@ public class RoomController {
         return stringBuilder.toString();
     }
 
-    @ResponseBody
     @RequestMapping("room/book/{roomId}")
     public boolean bookRoom(@PathVariable Long roomId) {
 
