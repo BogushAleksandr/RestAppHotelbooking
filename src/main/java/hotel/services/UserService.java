@@ -28,4 +28,9 @@ public class UserService {
         return resultUsers.toString();
     }
 
+    public String addUser() {
+        userRepository.save(new User("firstnameUser1", "secondnameUser1", "+380969604511", "user1kasd10@ukr.net"));
+        return "User is added!";
+    }
+
 }

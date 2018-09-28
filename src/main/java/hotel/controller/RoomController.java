@@ -17,12 +17,12 @@ public class RoomController {
 
     @RequestMapping("/findAllRooms")
     private String findAllRoom() {
-               return roomService.findedAllRoom();
+        return roomService.findedAllRoom();
     }
 
     @RequestMapping("find/category/{name}")
     private String findByName(@PathVariable String name) {
-                return roomService.findByName(name);
+        return roomService.findByName(name);
     }
 
     @RequestMapping("room/available")
@@ -30,8 +30,8 @@ public class RoomController {
         return roomService.getAvailableRooms();
     }
 
-    @RequestMapping("room/book/{number}")
-    private boolean bookRoom(@PathVariable Long roomId) {
-        return roomService.bookRoom(roomId);
+    @RequestMapping("room/book")
+    private String bookRoom(Long roomId, Long userId, Long featureId, Integer year, Integer month, Integer dayOfMonth) {
+        return roomService.bookRoom(1L, 1L, 2L, 2018, 10, 17);
     }
 }

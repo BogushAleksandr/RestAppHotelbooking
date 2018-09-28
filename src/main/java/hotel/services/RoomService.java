@@ -23,9 +23,8 @@ public class RoomService {
     private final JournalService journalService;
     private final UserRepository userRepository;
     private final FeaturesRepository featuresRepository;
-
     @Autowired
-    public RoomService(RoomRepository roomRepository, 
+    public RoomService(RoomRepository roomRepository,
                        CategoryRepository categoryRepository, JournalService journalService,
                        UserRepository userRepository, FeaturesRepository featuresRepository) {
         this.roomRepository = roomRepository;
@@ -34,7 +33,6 @@ public class RoomService {
         this.userRepository = userRepository;
         this.featuresRepository = featuresRepository;
     }
-
     public String findedAllRoom() {
         StringBuilder resultRoom = new StringBuilder(" ");
         for (Room roomResult : roomRepository.findAll()) {
@@ -42,44 +40,32 @@ public class RoomService {
         }
         return resultRoom.toString();
     }
-
     public String findByName(@PathVariable String name) {
         Category category = categoryRepository.getCategoryByCategoryName(name);
         List<Room> rooms = filterByCategory(category);
-
         StringBuilder sb = new StringBuilder();
-
         for (Room room : rooms) {
             sb.append(room).append("</br>");
         }
-
         return sb.toString();
     }
-
     public String getAvailableRooms() {
         StringBuilder stringBuilder = new StringBuilder();
-
         for (Room room : avaibleRooms()) {
             stringBuilder.append(room).append("</br>");
         }
-
         return stringBuilder.toString();
     }
 
-    public boolean bookRoom(@PathVariable Long roomId) {
-
-        User user = userRepository.getUserById(1L);
+    public String bookRoom(Long roomId, Long userId, Long featureId, Integer year, Integer month, Integer dayOfMonth) {
+        User user = userRepository.getUserById(userId);
         Room room = roomRepository.getById(roomId);
         LocalDate dateFrom = LocalDate.now();
-        LocalDate dateTo = LocalDate.of(2018, 8, 14);
+        LocalDate dateTo = LocalDate.of(year, month, dayOfMonth);
         List<Feature> features = new ArrayList<>();
-
-        features.add(featuresRepository.getById(1L));
-
+        features.add(featuresRepository.getById(featureId));
         journalService.bookRoom(user, room, dateFrom, dateTo, features);
-
-        //TODO test
-        return true;
+        return "booking successfully!";
     }
 
 

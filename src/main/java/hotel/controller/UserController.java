@@ -18,4 +18,9 @@ public class UserController {
         return userService.findedallUser();
     }
 
+    @RequestMapping("/saveUser")
+    public String addUser() {
+        return userService.addUser();
+    }
+
 }
