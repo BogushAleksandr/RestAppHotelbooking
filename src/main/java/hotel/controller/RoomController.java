@@ -1,10 +1,13 @@
 package hotel.controller;
 
+import hotel.entities.Feature;
+import hotel.entities.Room;
+import hotel.entities.User;
 import hotel.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class RoomController {
@@ -16,8 +19,8 @@ public class RoomController {
     }
 
     @RequestMapping("/findAllRooms")
-    private String findAllRoom() {
-        return roomService.findedAllRoom();
+    private List<Room> findAllRoom() {
+        return roomService.getAllRooms();
     }
 
     @RequestMapping("find/category/{name}")
@@ -30,8 +33,16 @@ public class RoomController {
         return roomService.getAvailableRooms();
     }
 
-    @RequestMapping("room/book")
-    private String bookRoom(Long roomId, Long userId, Long featureId, Integer year, Integer month, Integer dayOfMonth) {
-        return roomService.bookRoom(1L, 1L, 2L, 2018, 10, 17);
+    @RequestMapping(value = "/room/book", method = RequestMethod.POST)
+    public Room bookRoom(
+            @RequestParam("roomId") Room room,
+            @RequestParam("userId") User user,
+            @RequestParam("featureId") Feature[] features,
+            @RequestParam("year") int year,
+            @RequestParam("month") int month,
+            @RequestParam("dayOfMonth") int dayOfMonth
+    ) {
+        return roomService.BookRoom(room, user, features, year, month, dayOfMonth);
     }
+
 }

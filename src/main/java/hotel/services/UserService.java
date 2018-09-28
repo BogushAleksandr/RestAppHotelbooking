@@ -33,4 +33,8 @@ public class UserService {
         return "User is added!";
     }
 
+    public User getUserById(Long id){
+        return userRepository.findById(id).get();
+    }
+
 }

@@ -21,11 +21,10 @@ public class JournalService {
         this.priceCalculator = priceCalculator;
     }
 
-    //TODO make this return boolean
-    public void bookRoom(User user, Room room, LocalDate dateFrom, LocalDate dateTo, List<Feature> features) {
+    public Room bookRoom(User user, Room room, LocalDate dateFrom, LocalDate dateTo, List<Feature> features) {
         double price = priceCalculator.getPrice(room, features);
         BookingJournal journalEntry = new BookingJournal(user, room, dateFrom, dateTo, price);
-        bookingJournalRepository.save(journalEntry);
+        return bookingJournalRepository.save(journalEntry).getRoom_id();
     }
 
     public String findallBooking(){
@@ -35,5 +34,9 @@ public class JournalService {
             resultFindallBooking += bookingJournalResult.toString() + "</br>";
         }
         return resultFindallBooking;
+    }
+
+    public List<BookingJournal> findBookingUser(User user){
+        return bookingJournalRepository.findByUser(user);
     }
 }

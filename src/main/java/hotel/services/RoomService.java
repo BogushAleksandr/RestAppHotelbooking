@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -23,6 +24,7 @@ public class RoomService {
     private final JournalService journalService;
     private final UserRepository userRepository;
     private final FeaturesRepository featuresRepository;
+
     @Autowired
     public RoomService(RoomRepository roomRepository,
                        CategoryRepository categoryRepository, JournalService journalService,
@@ -33,6 +35,11 @@ public class RoomService {
         this.userRepository = userRepository;
         this.featuresRepository = featuresRepository;
     }
+
+    public List<Room> getAllRooms() {
+        return roomRepository.findAll();
+    }
+
     public String findedAllRoom() {
         StringBuilder resultRoom = new StringBuilder(" ");
         for (Room roomResult : roomRepository.findAll()) {
@@ -40,6 +47,7 @@ public class RoomService {
         }
         return resultRoom.toString();
     }
+
     public String findByName(@PathVariable String name) {
         Category category = categoryRepository.getCategoryByCategoryName(name);
         List<Room> rooms = filterByCategory(category);
@@ -49,6 +57,7 @@ public class RoomService {
         }
         return sb.toString();
     }
+
     public String getAvailableRooms() {
         StringBuilder stringBuilder = new StringBuilder();
         for (Room room : avaibleRooms()) {
@@ -57,17 +66,14 @@ public class RoomService {
         return stringBuilder.toString();
     }
 
-    public String bookRoom(Long roomId, Long userId, Long featureId, Integer year, Integer month, Integer dayOfMonth) {
-        User user = userRepository.getUserById(userId);
-        Room room = roomRepository.getById(roomId);
+    public Room BookRoom(Room room, User user, Feature[] features, int year, int month, int dayOfMonth){
         LocalDate dateFrom = LocalDate.now();
         LocalDate dateTo = LocalDate.of(year, month, dayOfMonth);
-        List<Feature> features = new ArrayList<>();
-        features.add(featuresRepository.getById(featureId));
-        journalService.bookRoom(user, room, dateFrom, dateTo, features);
-        return "booking successfully!";
-    }
 
+        List<Feature> featuresList = Arrays.asList(features);
+
+        return journalService.bookRoom(user, room, dateFrom, dateTo, featuresList);
+    }
 
     public List<Room> filterByCategory(Category category) {
         List<Room> result = new ArrayList<>();
@@ -88,6 +94,4 @@ public class RoomService {
         }
         return result;
     }
-
-
 }

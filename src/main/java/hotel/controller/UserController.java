@@ -20,11 +20,7 @@ public class UserController {
     }
 
     @RequestMapping("/saveUser")
-    public String addUser() {
+    private String addUser() {
         return userService.addUser();
     }
-
-
-
-
 }

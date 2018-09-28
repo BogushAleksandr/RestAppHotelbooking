@@ -23,9 +23,8 @@ Tech stack: Java 8, Spring Boot, Spring MVC, Spring Data, Hibernate, H2, maven.
 2. View list of available rooms - "http://localhost:8080/room/available"
 3. View rooms filtered by category - "http://localhost:8080/find/category/{name}". Name - "KINGROOM", "LUXROOM", "LOSERROOM".
 4. Create user - "http://localhost:8080/room/saveUser"
-5. User can book the room for specified days - "http://localhost:8080/room/book".
-
-6. User can view his booking - "http://localhost:8080/................"
+5. User can book the room for specified days - "http://localhost:8080/room/book"
+6. User can view his booking - "http://localhost:8080//findBookingUser/{userID}"
 
 7. User can get the total price of the booking (room for dates period + cost of additional options).
 
