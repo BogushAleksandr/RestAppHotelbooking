@@ -1,9 +1,6 @@
 package hotel.services;
 
-import hotel.entities.BookingJournal;
-import hotel.entities.Feature;
-import hotel.entities.Room;
-import hotel.entities.User;
+import hotel.entities.*;
 import hotel.repositories.BookingJournalRepository;
 import hotel.util.PriceCalculator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +26,14 @@ public class JournalService {
         double price = priceCalculator.getPrice(room, features);
         BookingJournal journalEntry = new BookingJournal(user, room, dateFrom, dateTo, price);
         bookingJournalRepository.save(journalEntry);
+    }
+
+    public String findallBooking(){
+
+        String resultFindallBooking = " ";
+        for (BookingJournal bookingJournalResult : bookingJournalRepository.findAll()) {
+            resultFindallBooking += bookingJournalResult.toString() + "</br>";
+        }
+        return resultFindallBooking;
     }
 }

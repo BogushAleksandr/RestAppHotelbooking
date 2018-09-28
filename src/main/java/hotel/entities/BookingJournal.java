@@ -14,7 +14,7 @@ public class BookingJournal implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "USER_ID")
-    private User user_id;
+    private User user;
 
     @OneToOne
     @JoinColumn(name = "ROOM_ID")
@@ -34,8 +34,8 @@ public class BookingJournal implements Serializable {
 
     }
 
-    public BookingJournal(User user_id, Room room_id, LocalDate date_from, LocalDate date_to, double total_price) {
-        this.user_id = user_id;
+    public BookingJournal(User user, Room room_id, LocalDate date_from, LocalDate date_to, double total_price) {
+        this.user = user;
         this.room_id = room_id;
         this.date_from = date_from;
         this.date_to = date_to;
@@ -50,12 +50,12 @@ public class BookingJournal implements Serializable {
         this.id = id;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Room getRoom_id() {
@@ -88,5 +88,11 @@ public class BookingJournal implements Serializable {
 
     public void setTotal_price(double total_price) {
         this.total_price = total_price;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("BookingJournal [id = '%d', user = '%d', room_id = '%d', date_from = '%s', date_to = '%s', total_price = '%8.2f']",
+                id, user.getId(), room_id.getId(), date_from, date_to, total_price);
     }
 }

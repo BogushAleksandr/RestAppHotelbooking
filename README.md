@@ -25,8 +25,8 @@ Tech stack: Java 8, Spring Boot, Spring MVC, Spring Data, Hibernate, H2, maven.
 4. Create user - "http://localhost:8080/room/saveUser"
 5. User can book the room for specified days - "http://localhost:8080/room/book".
 
-6. User can view his booking.
+6. User can view his booking - "http://localhost:8080/................"
 
 7. User can get the total price of the booking (room for dates period + cost of additional options).
 
-8. View all bookings for the hotel.
+8. View all bookings for the hotel - "http://localhost:8080/findallBooking"
