@@ -3,10 +3,17 @@ package hotel.tests.services.stubs;
 import hotel.entities.Room;
 import hotel.repositories.RoomRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class RoomRepositoryStub implements RoomRepository {
+
+    private List<Room> storage;
+
+    public RoomRepositoryStub() {
+        this.storage = new ArrayList<>();
+    }
 
     @Override
     public Room getById(Long id) {
@@ -15,7 +22,8 @@ public class RoomRepositoryStub implements RoomRepository {
 
     @Override
     public <S extends Room> S save(S entity) {
-        return null;
+        storage.add(entity);
+        return entity;
     }
 
     @Override
@@ -35,7 +43,7 @@ public class RoomRepositoryStub implements RoomRepository {
 
     @Override
     public List<Room> findAll() {
-        return null;
+        return storage;
     }
 
     @Override

@@ -29,7 +29,8 @@
         <hibernate-core>5.3.6.Final</hibernate-core>
         <h2>1.4.196</h2>
         <jackson-databind>2.9.6</jackson-databind>
-        <junit-jupiter-api>5.3.1</junit-jupiter-api>
+        <junit.jupiter.version>5.3.1</junit.jupiter.version>
+        <!-- <assertj-core>3.11.1</assertj-core>> -->
     </properties>
     <!-- Add typical dependencies for a web application -->
     <dependencies>
@@ -72,9 +73,29 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api}</version>
+            <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core}</version>
+            <scope>test</scope>
+        </dependency>-->
+
     </dependencies>
     <!-- Package as an executable jar -->
     <build>
