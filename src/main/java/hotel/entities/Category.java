@@ -23,6 +23,11 @@ public class Category implements Serializable {
         this.categoryName = name;
     }
 
+    public Category(long id, String categoryName) {
+        this.id = id;
+        this.categoryName = categoryName;
+    }
+
     @Override
     public String toString() {
         return String.format("Category [id = '%d', name = '%s']", id, categoryName);

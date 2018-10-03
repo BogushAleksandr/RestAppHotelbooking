@@ -28,6 +28,14 @@ public class Room implements Serializable {
 
     }
 
+    public Room(long id, Category category, String number, double price, int available) {
+        this.id = id;
+        this.category = category;
+        this.number = number;
+        this.price = price;
+        this.available = available;
+    }
+
     public Room(Category category, String number, double price, int available) {
         this.category = category;
         this.number = number;

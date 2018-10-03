@@ -1,4 +1,4 @@
-package hotel.tests;
+package hotel.tests.util;
 
 import hotel.entities.Feature;
 import hotel.entities.Room;
