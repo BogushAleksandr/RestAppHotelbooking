@@ -19,6 +19,5 @@ public class PriceCalculator {
         }
 
         return price;
-
     }
 }

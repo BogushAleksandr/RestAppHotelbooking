@@ -3,6 +3,7 @@ package hotel.tests.services.stubs;
 import hotel.entities.Category;
 import hotel.repositories.CategoryRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class CategoryRepositoryStub implements CategoryRepository {
@@ -32,7 +33,7 @@ public class CategoryRepositoryStub implements CategoryRepository {
     }
 
     @Override
-    public Iterable<Category> findAll() {
+    public List<Category> findAll() {
         return null;
     }
 

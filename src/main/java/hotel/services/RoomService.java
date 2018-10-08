@@ -6,7 +6,6 @@ import hotel.repositories.CategoryRepository;
 import hotel.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +26,10 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public String findByName(@PathVariable String name) {
+    public String findByCategoryName(String name) {
         Category category = categoryRepository.getCategoryByCategoryName(name);
         List<Room> rooms = filterByCategory(category);
+
         StringBuilder sb = new StringBuilder();
         for (Room room : rooms) {
             sb.append(room).append("</br>");

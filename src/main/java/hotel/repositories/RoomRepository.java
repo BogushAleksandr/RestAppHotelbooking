@@ -9,7 +9,5 @@ import java.util.List;
 @Repository
 public interface RoomRepository extends CrudRepository<Room, Long> {
 
-    Room getById(Long id);
-
     List<Room> findAll();
 }

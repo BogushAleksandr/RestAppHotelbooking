@@ -27,3 +27,8 @@ Tech stack: Java 8, Spring Boot, Spring MVC, Spring Data, Hibernate, H2, maven.
 6. User can view his booking - "http://localhost:8080//findBookingUser/{userID}"
 7. User can get the total price of the booking (room for dates period + cost of additional options).
 8. View all bookings for the hotel - "http://localhost:8080/findallBooking"
+
+
+unit tests:
+1) Positive and Negative test to "List of available rooms".
+2) Positive and Negative test to "Create user".

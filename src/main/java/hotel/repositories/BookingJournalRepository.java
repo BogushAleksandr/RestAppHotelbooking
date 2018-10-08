@@ -11,4 +11,6 @@ import java.util.List;
 public interface BookingJournalRepository extends CrudRepository<BookingJournal, Long> {
 
     List<BookingJournal> findByUser(User user);
+
+    List<BookingJournal> findAll();
 }

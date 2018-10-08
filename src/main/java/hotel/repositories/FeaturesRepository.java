@@ -4,9 +4,9 @@ import hotel.entities.Feature;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface FeaturesRepository extends CrudRepository<Feature, Long> {
-
-    Feature getById(Long id);
-
+    List<Feature> findAll();
 }

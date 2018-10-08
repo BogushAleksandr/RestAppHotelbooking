@@ -5,6 +5,8 @@ import hotel.repositories.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CategoryService {
     private final CategoryRepository categoryRepository;
@@ -14,11 +16,7 @@ public class CategoryService {
         this.categoryRepository = categoryRepository;
     }
 
-    public String findAllCategory() {
-        String resultCategory = " ";
-        for (Category category : categoryRepository.findAll()) {
-            resultCategory += category.toString() + "</br>";
-        }
-        return resultCategory;
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
     }
 }

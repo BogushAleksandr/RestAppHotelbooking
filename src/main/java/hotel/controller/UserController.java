@@ -1,9 +1,14 @@
 package hotel.controller;
 
+import hotel.entities.User;
 import hotel.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class UserController {
@@ -15,12 +20,17 @@ public class UserController {
     }
 
     @RequestMapping("/find/all/User")
-    private String findallUsers() {
+    private List<User> findallUsers() {
         return userService.findedallUser();
     }
 
+    @RequestMapping(value = "/register", method = RequestMethod.POST, consumes = "application/json")
+    private User registerUser(@RequestBody User user) {
+        return userService.addUser(user);
+    }
+
     @RequestMapping("/saveUser")
-    private String addUser() {
-        return userService.addUser();
+    private String addUsers() {
+        return userService.addUsers();
     }
 }

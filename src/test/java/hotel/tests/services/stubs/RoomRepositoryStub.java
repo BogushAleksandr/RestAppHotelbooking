@@ -16,11 +16,6 @@ public class RoomRepositoryStub implements RoomRepository {
     }
 
     @Override
-    public Room getById(Long id) {
-        return null;
-    }
-
-    @Override
     public <S extends Room> S save(S entity) {
         storage.add(entity);
         return entity;

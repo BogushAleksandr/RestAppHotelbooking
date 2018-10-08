@@ -38,13 +38,8 @@ public class JournalService {
         return bookingJournalRepository.save(journalEntry).getRoom_id();
     }
 
-    public String findallBooking(){
-
-        StringBuilder resultFindallBooking = new StringBuilder(" ");
-        for (BookingJournal bookingJournalResult : bookingJournalRepository.findAll()) {
-            resultFindallBooking.append(bookingJournalResult.toString()).append("</br>");
-        }
-        return resultFindallBooking.toString();
+    public List<BookingJournal> findallBooking() {
+        return bookingJournalRepository.findAll();
     }
 
     public List<BookingJournal> findBookingUser(User user){

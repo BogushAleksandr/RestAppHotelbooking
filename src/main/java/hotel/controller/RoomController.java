@@ -30,8 +30,8 @@ public class RoomController {
     }
 
     @RequestMapping("find/category/{name}")
-    private String findByName(@PathVariable String name) {
-        return roomService.findByName(name);
+    private String findByCategoryName(@PathVariable String name) {
+        return roomService.findByCategoryName(name);
     }
 
     @RequestMapping("room/available")

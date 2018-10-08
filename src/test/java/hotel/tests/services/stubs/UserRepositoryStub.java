@@ -3,13 +3,10 @@ package hotel.tests.services.stubs;
 import hotel.entities.User;
 import hotel.repositories.UserRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 public class UserRepositoryStub implements UserRepository {
-    @Override
-    public User getUserById(Long id) {
-        return null;
-    }
 
     @Override
     public <S extends User> S save(S entity) {
@@ -32,7 +29,7 @@ public class UserRepositoryStub implements UserRepository {
     }
 
     @Override
-    public Iterable<User> findAll() {
+    public List<User> findAll() {
         return null;
     }
 

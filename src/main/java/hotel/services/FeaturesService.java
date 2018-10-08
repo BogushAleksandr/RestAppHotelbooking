@@ -5,6 +5,8 @@ import hotel.repositories.FeaturesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FeaturesService {
     private final FeaturesRepository featuresRepository;
@@ -13,11 +15,7 @@ public class FeaturesService {
         this.featuresRepository = featuresRepository;
     }
 
-    public String findedAllFeatures() {
-        StringBuilder result = new StringBuilder(" ");
-        for (Feature feature : featuresRepository.findAll()) {
-            result.append(feature.toString()).append("</br>");
-        }
-        return result.toString();
+    public List<Feature> findedAllFeatures() {
+        return featuresRepository.findAll();
     }
 }

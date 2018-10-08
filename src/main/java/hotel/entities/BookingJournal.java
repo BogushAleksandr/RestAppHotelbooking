@@ -20,7 +20,6 @@ public class BookingJournal implements Serializable {
     @JoinColumn(name = "ROOM_ID")
     private Room room_id;
 
-
     @Column(name = "date_from")
     private LocalDate date_from;
 
