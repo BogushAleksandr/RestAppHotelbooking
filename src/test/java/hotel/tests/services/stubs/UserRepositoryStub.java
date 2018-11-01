@@ -3,14 +3,24 @@ package hotel.tests.services.stubs;
 import hotel.entities.User;
 import hotel.repositories.UserRepository;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
+import java.util.Spliterator;
+import java.util.function.Consumer;
 
 public class UserRepositoryStub implements UserRepository {
+    private List<User> userListStub;
+
+
+    public UserRepositoryStub() {
+        this.userListStub = userListStub;
+    }
 
     @Override
     public <S extends User> S save(S entity) {
-        return null;
+        userListStub.add(entity);
+        return entity;
     }
 
     @Override
@@ -30,7 +40,7 @@ public class UserRepositoryStub implements UserRepository {
 
     @Override
     public List<User> findAll() {
-        return null;
+        return userListStub;
     }
 
     @Override
@@ -61,5 +71,20 @@ public class UserRepositoryStub implements UserRepository {
     @Override
     public void deleteAll() {
 
+    }
+
+    @Override
+    public Iterator<Object> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super Object> action) {
+
+    }
+
+    @Override
+    public Spliterator<Object> spliterator() {
+        return null;
     }
 }
