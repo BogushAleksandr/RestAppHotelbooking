@@ -6,7 +6,7 @@
 
     <groupId>com.ua.home</groupId>
     <artifactId>hotelbooking</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <packaging>jar</packaging>
 
     <name>Hotel Booking</name>
@@ -15,7 +15,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -26,15 +26,15 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <hibernate-core>5.3.6.Final</hibernate-core>
+       <hibernate-core>5.3.7.Final</hibernate-core>
         <h2>1.4.196</h2>
-        <jackson-databind>2.9.6</jackson-databind>
+        <jackson-databind>2.9.7</jackson-databind>
         <junit.jupiter.version>5.3.1</junit.jupiter.version>
         <!-- <assertj-core>3.11.1</assertj-core>> -->
     </properties>
     <!-- Add typical dependencies for a web application -->
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -55,7 +55,8 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>${hibernate-core}</version>
-            <scope>compile</scope>
+           <scope>compile</scope>
+           <!-- <scope>test</scope> -->
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
@@ -88,13 +89,13 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
+        <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
             <version>2.23.0</version>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
     <!-- Package as an executable jar -->

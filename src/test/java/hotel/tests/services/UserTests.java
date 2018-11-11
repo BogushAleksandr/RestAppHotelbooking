@@ -30,8 +30,6 @@ public class UserTests {
         user1 = new User("first2nameTestUser1", "secondnameTestUser1", "+380993694511", "Test1@ukr.net");
         user2 = new User("first2nameTestUser2", "secondnameTestUser2", "+380993694511", "Test2@ukr.net");
         user3 = new User("first2nameTestUser3", "secondnameTestUser3", "+380993694511", "Test3@ukr.net");
-
-
     }
 
     @Test
@@ -50,8 +48,5 @@ public class UserTests {
         userListActual = new ArrayList<>();
         userListActual.add(user1);
         assertNotEquals(userListExpected, userListActual);
-
-
-
     }
 }

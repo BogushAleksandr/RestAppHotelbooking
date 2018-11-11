@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertIterableEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -22,7 +23,6 @@ class RoomTests {
     private static CategoryRepository categoryRepository;
     private static List<Room> roomListExpected;
     private static List<Room> roomListExpectedNegative;
-
     private static RoomService roomService;
 
     @BeforeAll
@@ -66,4 +66,20 @@ class RoomTests {
         assertNotEquals(roomListExpectedNegative, actual);
 
     }
+
+
+   /* @Test
+    void findByCategoryNameCorrect() {
+
+        List<Room> actualRoom ;
+
+
+         assertEquals(, actual);
+    }*/
+
+
+   /* @Test
+    void findByCategoryNameNegative() {
+
+    }*/
 }

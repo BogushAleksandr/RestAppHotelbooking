@@ -1,4 +1,4 @@
-# RestAppHotelbooking
+l# RestAppHotelbooking
 
                                                    Create REST application Hotel booking
 With capabilities (each represented by separate endpoint):
@@ -29,6 +29,7 @@ Tech stack: Java 8, Spring Boot, Spring MVC, Spring Data, Hibernate, H2, maven.
 8. View all bookings for the hotel - "http://localhost:8080/findallBooking"
 
 
-unit tests:
-1) Positive and Negative test to "List of available rooms".
+Unit tests:
+1) Positive and Negative test to "View List of available rooms".
 2) Positive and Negative test to "Create user".
+3) Positive and Negative test to "View rooms filtered by category".

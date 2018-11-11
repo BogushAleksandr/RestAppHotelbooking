@@ -72,19 +72,4 @@ public class UserRepositoryStub implements UserRepository {
     public void deleteAll() {
 
     }
-
-    @Override
-    public Iterator<Object> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super Object> action) {
-
-    }
-
-    @Override
-    public Spliterator<Object> spliterator() {
-        return null;
-    }
 }
