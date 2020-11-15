@@ -20,22 +20,16 @@
     </parent>
 
     <properties>
-
-
         <java.version>1.8</java.version>
-
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
         <!-- <tomcat.version>9.0.12</tomcat.version>-->
         <!--<hibernate-core>5.3.7.Final</hibernate-core>-->
         <h2>1.4.196</h2>
         <jackson-databind>2.10.1</jackson-databind>
         <junit.jupiter.version>5.3.1</junit.jupiter.version>
-
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
         <!-- <assertj-core>3.11.1</assertj-core>> -->
@@ -43,11 +37,11 @@
     <!-- Add typical dependencies for a web application -->
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools-->
-       <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
-        </dependency>-->
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-devtools</artifactId>
+             <optional>true</optional>
+         </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
