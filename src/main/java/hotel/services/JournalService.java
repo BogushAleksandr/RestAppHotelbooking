@@ -13,6 +13,12 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author Bogush Aleksandr
+ * @version 1.0
+ * @since 15-11-2020
+ */
+
 @Service
 public class JournalService {
 
