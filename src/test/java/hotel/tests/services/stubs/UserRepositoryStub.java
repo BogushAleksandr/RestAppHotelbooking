@@ -9,6 +9,12 @@ import java.util.Optional;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
+/**
+ * @author Bogush Aleksandr
+ * @version 1.0
+ * @since 15-11-2020
+ */
+
 public class UserRepositoryStub implements UserRepository {
     private List<User> userListStub;
 

@@ -6,6 +6,12 @@ import hotel.repositories.CategoryRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * @author Bogush Aleksandr
+ * @version 1.0
+ * @since 15-11-2020
+ */
+
 public class CategoryRepositoryStub implements CategoryRepository {
     @Override
     public Category getCategoryByCategoryName(String name) {
