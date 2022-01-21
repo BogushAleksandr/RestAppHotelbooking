@@ -27,7 +27,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- <tomcat.version>9.0.12</tomcat.version>-->
         <!--<hibernate-core>5.3.7.Final</hibernate-core>-->
-        <h2>1.4.200</h2>
+        <h2>2.1.210</h2>
         <jackson-databind>2.11.3</jackson-databind>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <downloadSources>true</downloadSources>
