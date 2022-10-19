@@ -28,7 +28,7 @@
         <!-- <tomcat.version>9.0.12</tomcat.version>-->
         <!--<hibernate-core>5.3.7.Final</hibernate-core>-->
         <h2.version>2.1.212</h2.version>
-        <jackson-databind.version>2.13.3</jackson-databind.version>
+        <jackson-databind.version>2.13.4.1</jackson-databind.version>
         <junit.jupiter.version>5.8.2</junit.jupiter.version>
         <downloadSources>true</downloadSources>
         <downloadJavadocs>true</downloadJavadocs>
