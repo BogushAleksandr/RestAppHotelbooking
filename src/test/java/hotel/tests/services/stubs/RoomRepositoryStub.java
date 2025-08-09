@@ -68,6 +68,11 @@ public class RoomRepositoryStub implements RoomRepository {
     }
 
     @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
+
+    }
+
+    @Override
     public void deleteAll(Iterable<? extends Room> entities) {
 
     }
