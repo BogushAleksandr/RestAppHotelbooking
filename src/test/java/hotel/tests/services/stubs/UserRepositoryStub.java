@@ -3,11 +3,8 @@ package hotel.tests.services.stubs;
 import hotel.entities.User;
 import hotel.repositories.UserRepository;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 /**
  * @author Bogush Aleksandr
@@ -66,6 +63,11 @@ public class UserRepositoryStub implements UserRepository {
 
     @Override
     public void delete(User entity) {
+
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> longs) {
 
     }
 
